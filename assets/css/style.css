@@ -14,7 +14,7 @@
     border: none;
 }
 
-#app {
+.page {
     height: 100vh;
     width: 100vw;
     background-color: var(--background-color-bottom);
@@ -99,7 +99,7 @@
     background-color: var(--background-color-icon);
 }
 
-#chat {
+#section_chat {
     height: calc(100% - 179px);
     width: 100%;
     background-image: url('/assets/img/backgroundIMG/background.jpg');
@@ -124,4 +124,18 @@
 #input_message {
     width: 80%;
     height: 100%;
+}
+
+#chat {
+    border-bottom: 1px solid var(--color-icon-bold);
+}
+
+.chat_image_profile {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.text_user p {
+    margin-bottom: 0;
 }

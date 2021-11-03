@@ -16,7 +16,7 @@
 
 <body>
 
-    <div id="app" class="app">
+    <div id="app" class="page">
         <!-- background -->
         <div id="background_app">
             <!-- background top green-->
@@ -46,21 +46,30 @@
                 <!-- alert banner -->
                 <div id="alert" class="d-flex align-items-center">
                     <div id="alert_icon" class="ms-4">
-                        <div #="back_alert_icon"><i class="fas fa-bell-slash"></i></div>
+                        <div id="back_alert_icon"><i class="fas fa-bell-slash"></i></div>
                     </div>
                     <div id="alert_text" class="ms-2">
-                        <p class="fw-bold fs-5">Ricevi notifiche di nuovi messaggi</p>
-                        <p class="text-muted text-decoration-underline">Attiva notifiche desktop</p>
+                        <p class="fw-bold fs-5">{{message_alert_1}}</p>
+                        <p class="text-muted text-decoration-underline">{{message_alert_2}}</p>
                     </div>
                 </div>
                 <!-- /alert banner -->
                 <!-- input search chat -->
                 <div id="input_search" class="input-group mb-3">
                     <span class="input-group-text b-none" id="search"><i class="fas fa-search"></i></span>
-                    <input type="text" class="form-control b-none" placeholder="Assegnalo con js">
+                    <input type="text" class="form-control b-none" :placeholder="placeholder_search_chat">
                 </div>
                 <!-- /input search chat -->
+                <!-- chat list -->
+                <div id="chat_list" class="user" v-for="contact in contacts">
+                    <!-- chat -->
+                    <div id="chat" class="d-flex py-3">
+                        <img :src=" `./assets/img/avatarIMG/avatar` + contact.avatar + `.jpg`" class="chat_image_profile ms-4">
+                        <h4 class="name ps-4">{{contact.name}}</h4>
+                    </div>
+                </div>
 
+                <!-- /chat list -->
             </div>
             <!-- /sidebar -->
 
@@ -70,15 +79,19 @@
                     <!-- info user -->
                     <div id="user_data" class="d-flex align-items-center">
                         <!-- img user -->
-                        <img src="./assets/img/avatarIMG/avatar_io.jpg">
-                        <!-- name user -->
-                        <p id="name_user" class="ps-2 fs-4">Nome Utente</p>
+                        <img src="./assets/img/avatarIMG/avatar_1.jpg">
+                        <div class="text_user ">
+                            <!-- name user -->
+                            <p id="name_user" class="ps-2 fs-4">Michele</p>
+                            <p id="last_access" class="ps-2 fs-6 text-muted">Ultimo accesso oggi alle </p>
+                        </div>
+
                     </div>
 
                 </div>
                 <!-- /info user banner -->
-                <!-- chat -->
-                <div id="chat">
+                <!-- section chat -->
+                <div id="section_chat">
 
                 </div>
                 <!-- input chat -->
@@ -87,7 +100,7 @@
                         <i class="far fa-smile"></i>
                     </div>
                     <div id="input_message" class="d-flex align-items-center">
-                        <input type="text" class="form-control py-3 b-none" placeholder="Assegnalo con Js">
+                        <input type="text" class="form-control py-2 b-none" :placeholder="placeholder_input_message">
                     </div>
                     <div id="emoticon" class="d-flex align-items-center justify-content-center">
                         <i class="fas fa-microphone"></i>
@@ -103,14 +116,14 @@
 
     </div>
 
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <!-- Link JavaScript -->
     <script src="./assets/js/main.js"></script>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <!-- Link VueJs -->
-    <!-- development version, includes helpful console warnings -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </body>
 
 </html>
