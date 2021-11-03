@@ -4,12 +4,16 @@
 
 /* Vuejs instance  */
 var app = new Vue({
-    el: '#app',
+    el: '#root',
     data: {
         message_alert_1: 'Ricevi notifiche di nuovi messaggi',
         message_alert_2: 'Attiva notifiche desktop',
         placeholder_search_chat: 'Cerca o inizia una nuova chat',
         placeholder_input_message: 'Scrivi un messaggio',
+        user: {
+            name: 'Valerio',
+            avatar: '_io'
+        },
         contacts: [{
                 name: 'Michele',
                 avatar: '_1',

@@ -1,134 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>BOOLZAPP</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp Vue</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
     <!-- Bootstrap CSS v5.0.2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Link CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Link font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
 </head>
 
 <body>
+    <div id="root" class="container_page">
+        <div id="background_bool">
+            <div id="window_app">
+                <div class="sidebar">
+                    <!-- info user  -->
+                    <div id="info_user" class="d-flex justify-content-between align-items-center">
 
-    <div id="app" class="page">
-        <!-- background -->
-        <div id="background_app">
-            <!-- background top green-->
-            <div id="banner_top"></div>
-        </div>
-        <!-- window chat -->
-        <div id="window_app">
-            <!-- sidebar -->
-            <div id="search_bar">
-                <!-- info user banner -->
-                <div id="info_user" class="d-flex align-items-center justify-content-between ps-3">
-                    <!-- info user -->
-                    <div id="user_data" class="d-flex align-items-center">
-                        <!-- img user -->
-                        <img src="./assets/img/avatarIMG/avatar_io.jpg">
-                        <!-- name user -->
-                        <p id="name_user" class="ps-2 fs-4">Nome Utente</p>
-                    </div>
-                    <!-- icone user -->
-                    <div id="user_icon" class="d-flex mx-4">
-                        <div class="mx-3"><i class="fas fa-circle-notch"></i></div>
-                        <div class="mx-3"><i class="fas fa-comment-alt"></i></div>
-                        <div class="mx-3"><i class="fas fa-ellipsis-v"></i></div>
-                    </div>
-                </div>
-                <!-- /info user banner -->
-                <!-- alert banner -->
-                <div id="alert" class="d-flex align-items-center">
-                    <div id="alert_icon" class="ms-4">
-                        <div id="back_alert_icon"><i class="fas fa-bell-slash"></i></div>
-                    </div>
-                    <div id="alert_text" class="ms-2">
-                        <p class="fw-bold fs-5">{{message_alert_1}}</p>
-                        <p class="text-muted text-decoration-underline">{{message_alert_2}}</p>
-                    </div>
-                </div>
-                <!-- /alert banner -->
-                <!-- input search chat -->
-                <div id="input_search" class="input-group mb-3">
-                    <span class="input-group-text b-none" id="search"><i class="fas fa-search"></i></span>
-                    <input type="text" class="form-control b-none" :placeholder="placeholder_search_chat">
-                </div>
-                <!-- /input search chat -->
-                <!-- chat list -->
-                <div id="chat_list" class="user" v-for="contact in contacts">
-                    <!-- chat -->
-                    <div id="chat" class="d-flex py-3">
-                        <img :src=" `./assets/img/avatarIMG/avatar` + contact.avatar + `.jpg`" class="chat_image_profile ms-4">
-                        <h4 class="name ps-4">{{contact.name}}</h4>
-                    </div>
+                        <div id="user_avatar" class="d-flex align-items-center">
+                            <img :src="'./assets/img/avatarIMG/avatar' + user.avatar + '.jpg'" class="image_user_avatar rounded-circle m-2">
+                            <div id="name_user" class="ps-2 fs-4">{{user.name}} {{user.surname}}</div>
+                        </div>
 
-                </div>
-
-                <!-- /chat list -->
-            </div>
-            <!-- /sidebar -->
-
-            <div id="window_chat" class="d-flex flex-column">
-                <!-- info user banner -->
-                <div id="info_user" class="d-flex align-items-center justify-content-between ps-3">
-                    <!-- info user -->
-                    <div id="user_data" class="d-flex align-items-center">
-                        <!-- img user -->
-                        <img src="./assets/img/avatarIMG/avatar_1.jpg">
-                        <div class="text_user ">
-                            <!-- name user -->
-                            <p id="name_user" class="ps-2 fs-4">Michele</p>
-                            <p id="last_access" class="ps-2 fs-6 text-muted">Ultimo accesso oggi alle </p>
+                        <form id="option_user_icon" class="d-flex justify-content-around">
+                            <div class="mx-3"><i class="fas fa-circle-notch"></i></div>
+                            <div class="mx-3"><i class="fas fa-comment-alt"></i></div>
+                            <div class="mx-3"><i class="fas fa-ellipsis-v"></i></div>
+                        </form>
+                    </div>
+                    <!-- /info user  -->
+                    <!-- alert notification -->
+                    <div id="notification" class="d-flex align-items-center ">
+                        <div id="alert_icon" class="ms-4 rounded-circle">
+                            <div id="back_alert_icon" class="p-3 "><i class="fas fa-bell-slash"></i></div>
+                        </div>
+                        <div id="alert_text" class="ms-2">
+                            <p class="fw-bold fs-5 mb-0">{{message_alert_1}}</p>
+                            <p class="text-muted text-decoration-underline mb-0">{{message_alert_2}}</p>
                         </div>
                     </div>
-                    <div id="user_icon" class="d-flex">
-                        <div class="mx-3"><i class="fas fa-search"></i></div>
-                        <div class="mx-3"><i class="fas fa-paperclip"></i></div>
-                        <div class="mx-3"><i class="fas fa-ellipsis-v"></i></div>
-                    </div>
+                    <!-- /alert notification -->
 
                 </div>
-                <!-- /info user banner -->
-                <!-- section chat -->
-                <div id="section_chat">
-
-                </div>
-                <!-- input chat -->
-                <div id="input_chat" class="d-flex">
-                    <div id="emoticon" class="d-flex align-items-center justify-content-center">
-                        <i class="far fa-smile"></i>
-                    </div>
-                    <div id="input_message" class="d-flex align-items-center">
-                        <input type="text" class="form-control py-2 b-none" :placeholder="placeholder_input_message">
-                    </div>
-                    <div id="emoticon" class="d-flex align-items-center justify-content-center">
-                        <i class="fas fa-microphone"></i>
-                    </div>
-
-
-                </div>
-                <!--/ input chat -->
             </div>
         </div>
     </div>
-    </div>
 
-    </div>
-
-    <!-- development version, includes helpful console warnings -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <!-- Link JavaScript -->
-    <script src="./assets/js/main.js"></script>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    <!-- Link VueJs -->
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
