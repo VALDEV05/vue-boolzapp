@@ -1,0 +1,127 @@
+/* Color Palette */
+
+:root {
+    --background-color-top: #009688;
+    --background-color-bottom: #D9DBD5;
+    --background-color-notification: #8EDAFC;
+    --color-icon-bold: #B1B1B1;
+    --color-text-main: #000000;
+    --color-text-submain: #7F7376;
+    --background-color-icon: #F2FBFF;
+}
+
+.b-none {
+    border: none;
+}
+
+#app {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--background-color-bottom);
+}
+
+#banner_top {
+    height: 120px;
+    background-color: var(--background-color-top);
+}
+
+#window_app {
+    background-color: var(--color-icon-bold);
+    position: absolute;
+    width: 80%;
+    height: 95%;
+    top: 2.5%;
+    left: 10%;
+}
+
+#search_bar {
+    float: left;
+    width: 40%;
+    height: 100%;
+    background-color: #F6F6F6;
+}
+
+#info_user {
+    width: 100%;
+    height: 109px;
+    background-color: #EDEDED;
+    border-right: 1px solid var(--color-icon-bold);
+}
+
+#window_chat {
+    float: right;
+    width: 60%;
+    height: 100%;
+    background-color: #F6F6F6;
+}
+
+#user_data img {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+
+#user_icon i {
+    transform: scale(1.7);
+    color: var(--color-icon-bold);
+}
+
+#alert {
+    height: 100px;
+    width: 100%;
+    background-color: var(--background-color-notification);
+}
+
+#alert_icon {
+    padding: 20px;
+    border-radius: 50%;
+    background-color: var(--background-color-icon);
+}
+
+#alert_icon i {
+    transform: scale(1.5);
+    color: var(--background-color-notification);
+}
+
+#alert_text p {
+    margin-bottom: 0;
+}
+
+#name_user {
+    margin-bottom: 0;
+}
+
+#input_search i {
+    color: var(--color-icon-bold);
+}
+
+.input-group-text {
+    background-color: var(--background-color-icon);
+}
+
+#chat {
+    height: calc(100% - 179px);
+    width: 100%;
+    background-image: url('/assets/img/backgroundIMG/background.jpg');
+}
+
+#input_chat {
+    height: 70px;
+    width: 100%;
+    background-color: #EDEDED;
+}
+
+#emoticon {
+    width: 10%;
+    height: 100%;
+}
+
+#emoticon i {
+    transform: scale(1.5);
+    color: var(--color-icon-bold);
+}
+
+#input_message {
+    width: 80%;
+    height: 100%;
+}
