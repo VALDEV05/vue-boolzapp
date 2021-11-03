@@ -21,6 +21,13 @@
     --background-color-sidebar: #FFFFFF;
 }
 
+
+/* common style */
+
+.b-none {
+    border: none;
+}
+
 .container_page {
     width: 100vw;
     height: 100vh;
@@ -34,7 +41,6 @@
     height: 95%;
     top: 2.5%;
     left: 10%;
-    background-color: violet;
 }
 
 .image_user_avatar {
@@ -42,7 +48,8 @@
     width: 80px;
 }
 
-.sidebar {
+.sidebar_window {
+    float: left;
     height: 100%;
     width: 35%;
     background-color: var(--background-color-sidebar);
@@ -65,9 +72,65 @@
     color: var(--background-color-notification);
 }
 
+#input_search i,
+#user_icon i {
+    color: var(--color-icon-bold);
+}
+
+#input_search input {
+    border: none
+}
+
+.input-group-text {
+    background-color: var(--background-color-icon);
+}
+
+
+/* chat window */
+
+#chat_window {
+    width: 60%;
+    height: 100%;
+    background-color: var(--background-color-page);
+}
+
+#data_contact_chat {
+    background-color: var(--background-color-sidebar);
+    padding: 8px 0;
+    height: 96px;
+}
+
+#section_chat {
+    height: calc(100% - 166px);
+    width: 100%;
+    background-image: url('/assets/img/backgroundIMG/background_chat.png');
+}
+
+#input_chat {
+    height: 70px;
+    width: 100%;
+    background-color: #EDEDED;
+}
+
+#emoticon {
+    width: 10%;
+    height: 100%;
+}
+
+#emoticon i {
+    transform: scale(1.5);
+    color: var(--color-icon-bold);
+}
+
+#input_message {
+    width: 80%;
+    height: 100%;
+}
+
 
 /* sizing icon */
 
+#user_icon i,
 #option_user_icon i,
 #alert_icon i {
     transform: scale(1.7);

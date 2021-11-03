@@ -17,8 +17,8 @@
 <body>
     <div id="root" class="container_page">
         <div id="background_bool">
-            <div id="window_app">
-                <div class="sidebar">
+            <div id="window_app" class="d-flex">
+                <div class="sidebar_window">
                     <!-- info user  -->
                     <div id="info_user" class="d-flex justify-content-between align-items-center">
 
@@ -45,6 +45,65 @@
                         </div>
                     </div>
                     <!-- /alert notification -->
+                    <!-- input search -->
+                    <div id="input_search" class="input-group mb-3 py-3 d-flex align-items-center">
+                        <span class="px-3" id="search"><i class="fas fa-search"></i></span>
+                        <input type="text" class="form-control" :placeholder="placeholder_search_chat">
+                    </div>
+                    <!-- /input search -->
+                    <!-- list contact -->
+                    <div id="info_list_contacts">
+                        <ul class="list-unstyled">
+                            <li class="contact d-flex align-items-center" v-for='(contact, i) in contacts'>
+                                <div class="avatar_image">
+                                    <img :src="'./assets/img/avatarIMG/avatar' + contact.avatar + '.jpg'" class="image_user_avatar rounded-circle">
+                                </div>
+                                <div>
+                                    {{contact.name}}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /list contact -->
+                </div>
+                <!-- /sidebar -->
+                <div id="chat_window">
+                    <!-- data contact -->
+                    <div id="data_contact_chat" class="d-flex align-items-center justify-content-between">
+                        <div id="contact_avatar" class="d-flex align-items-center justify-content-between">
+                            <div id="profile_picture">
+                                <img :src="'./assets/img/avatarIMG/avatar' + contacts[0].avatar + '.jpg'" class="image_user_avatar rounded-circle ms-3">
+                            </div>
+                            <div class="user-name ms-4 fs-4">
+                                {{contacts[0].name}}
+                            </div>
+                        </div>
+                        <div id="user_icon" class="d-flex">
+                            <div class="mx-3"><i class="fas fa-search"></i></div>
+                            <div class="mx-3"><i class="fas fa-paperclip"></i></div>
+                            <div class="mx-3"><i class="fas fa-ellipsis-v"></i></div>
+                        </div>
+                    </div>
+                    <!-- /data contact -->
+                    <!-- chat window -->
+                    <div id="section_chat">
+
+                    </div>
+                    <!-- /chat window -->
+                    <!-- input chat -->
+                    <div id="input_chat" class="d-flex">
+                        <div id="emoticon" class="d-flex align-items-center justify-content-center">
+                            <i class="far fa-smile"></i>
+                        </div>
+                        <div id="input_message" class="d-flex align-items-center">
+                            <input type="text" class="form-control py-2 b-none" :placeholder="placeholder_input_message">
+                        </div>
+                        <div id="emoticon" class="d-flex align-items-center justify-content-center">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                    </div>
+                    <!-- /input chat -->
+
 
                 </div>
             </div>
