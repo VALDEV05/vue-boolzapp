@@ -2,6 +2,14 @@
         ●	Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
         ●	Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto */
 
+//milestone completato push 03/11/2021 17:32 e4b2b6a
+
+
+/* Milestone 2
+●	Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
+●	Click sul contatto mostra la conversazione del contatto cliccato */
+
+
 /* Vuejs instance  */
 var app = new Vue({
     el: '#root',
@@ -10,6 +18,7 @@ var app = new Vue({
         message_alert_2: 'Attiva notifiche desktop',
         placeholder_search_chat: 'Cerca o inizia una nuova chat',
         placeholder_input_message: 'Scrivi un messaggio',
+        currentContact: 1,
         user: {
             name: 'Valerio',
             avatar: '_io'
@@ -97,4 +106,18 @@ var app = new Vue({
             },
         ]
     },
+
+    methods: {
+        lastDateContactCurrent() {
+
+            let contactMessages = this.contacts[this.currentContact].messages;
+
+            if (contactMessages[parseInt(contactMessages.length - 1)].status == "received")
+                contactLastAccess = contactMessages[parseInt(contactMessages.length - 1)].date;
+
+            else contactLastAccess = contactMessages[parseInt(contactMessages.length - 2)].date;
+
+            return this.lastDateContact = contactLastAccess;
+        },
+    }
 })

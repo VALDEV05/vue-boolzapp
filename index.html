@@ -54,12 +54,18 @@
                     <!-- list contact -->
                     <div id="info_list_contacts">
                         <ul class="list-unstyled">
-                            <li class="contact d-flex align-items-center" v-for='(contact, i) in contacts'>
-                                <div class="avatar_image">
-                                    <img :src="'./assets/img/avatarIMG/avatar' + contact.avatar + '.jpg'" class="image_user_avatar rounded-circle">
+                            <li class="contact d-flex justify-content-between" v-for='(contact, i) in contacts'>
+                                <div class="avatar_image d-flex  ms-2">
+                                    <img :src="' ./assets/img/avatarIMG/avatar' + contact.avatar + '.jpg '" class="image_user_avatar rounded-circle">
+                                    <div id="nameListContact" class="ms-3 fs-3">
+                                        {{contact.name}}
+                                    </div>
                                 </div>
-                                <div>
-                                    {{contact.name}}
+                                <div class="text_list_contact d-flex align-items-start">
+                                    <div class="last_date fs-6 me-2 text-muted">
+                                        {{lastDateContactCurrent()}}
+                                    </div>
+
                                 </div>
                             </li>
                         </ul>
@@ -72,10 +78,13 @@
                     <div id="data_contact_chat" class="d-flex align-items-center justify-content-between">
                         <div id="contact_avatar" class="d-flex align-items-center justify-content-between">
                             <div id="profile_picture">
-                                <img :src="'./assets/img/avatarIMG/avatar' + contacts[0].avatar + '.jpg'" class="image_user_avatar rounded-circle ms-3">
+                                <img :src="'./assets/img/avatarIMG/avatar' + contacts[currentContact].avatar + '.jpg '" class="image_user_avatar rounded-circle ms-3">
                             </div>
                             <div class="user-name ms-4 fs-4">
-                                {{contacts[0].name}}
+                                {{contacts[currentContact].name}}
+                                <div class="last_date fs-6 text-muted">
+                                    Ultimo accesso: {{lastDateContactCurrent()}}
+                                </div>
                             </div>
                         </div>
                         <div id="user_icon" class="d-flex">
@@ -87,7 +96,19 @@
                     <!-- /data contact -->
                     <!-- chat window -->
                     <div id="section_chat">
+                        <ul class="flex-column d-flex list-unstyled">
+                            <li id="boxMessage" class=" d-flex flex-column justify-content-between" :class="(message.status == 'sent') ? 'messageSent' : 'messageReceived'" v-for='message in contacts[currentContact].messages'>
+                                <div id="contentMessage" class="d-flex justify-content-between">
+                                    <div>
+                                        {{message.text}}
+                                        <div id="dateMessage">
+                                            {{message.date}}
+                                        </div>
+                                    </div>
 
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                     <!-- /chat window -->
                     <!-- input chat -->
