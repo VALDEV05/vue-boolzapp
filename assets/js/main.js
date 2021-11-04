@@ -36,7 +36,6 @@ var app = new Vue({
                 avatar: '_1',
                 visible: true,
                 messages: [{
-
                         date: '10/01/2020 15:30:55',
                         text: 'Hai portato a spasso il cane?',
                         status: 'sent'
@@ -141,6 +140,11 @@ var app = new Vue({
                 this.newMessage = '';
             }
             setTimeout(this.messageReceived, 1000)
+            setInterval(() => {
+                let chat_page = document.getElementById("section_chat");
+                chat_page.scrollTop = chat_page.scrollHeight;
+
+            }, 3 * 1000);
         },
 
         messageReceived() {
