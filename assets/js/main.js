@@ -130,20 +130,16 @@ var app = new Vue({
             return this.currentContact = i;
         },
 
-        UserNewMessage() {
-            let listMessages = this.contacts[this.currentContact].messages;
-            console.log(newMessage);
-            let messageUser = {
-                date: dayjs().format('DD/MM/YYYY hh:mm:ss'),
-                message: this.newMessage,
-                status: 'sent',
-            }
+        messageInput() {
 
             if (this.newMessage != '') {
-                listMessages.push(messageUser);
+                this.contacts[this.currentContact].messages.push({
+                    date: '10/01/2020 15:50:00',
+                    text: this.newMessage,
+                    status: 'sent',
+                })
                 this.newMessage = '';
             }
-
 
         },
     }
