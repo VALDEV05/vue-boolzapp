@@ -26,6 +26,7 @@ var app = new Vue({
         currentContact: 0,
         lastDateContact: '',
         newMessage: '',
+        searchContact: '',
         user: {
             name: 'Valerio',
             avatar: '_io'
@@ -149,6 +150,11 @@ var app = new Vue({
                 status: 'received'
             })
 
+        },
+        filterSearch() {
+            return this.contacts.filter(contact => {
+                return !this.searchContact || contact.name.toLowerCase().indexOf(this.searchContact.toLowerCase()) > -1
+            })
         },
     }
 })

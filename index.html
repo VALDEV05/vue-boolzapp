@@ -48,13 +48,13 @@
                     <!-- input search -->
                     <div id="input_search" class="input-group mb-3 py-3 d-flex align-items-center">
                         <span class="px-3" id="search"><i class="fas fa-search"></i></span>
-                        <input type="text" class="form-control" :placeholder="placeholder_search_chat">
+                        <input type="text" class="form-control" v-model="searchContact" :placeholder="placeholder_search_chat">
                     </div>
                     <!-- /input search -->
                     <!-- list contact -->
                     <div id="info_list_contacts">
                         <ul class="list-unstyled">
-                            <li class="contact d-flex justify-content-between" :class="(i == currentContact) ? 'active' : null " v-for='(contact, i) in contacts' @click='selected(i)'>
+                            <li class="contact d-flex justify-content-between" :class="(i == currentContact) ? 'active' : null " v-for='(contact, i) in filterSearch()' @click='selected(i)'>
                                 <div class="avatar_image d-flex  ms-2">
                                     <img :src="' ./assets/img/avatarIMG/avatar' + contact.avatar + '.jpg '" class="image_user_avatar rounded-circle">
                                     <div id="nameListContact" class="ms-3 fs-3">
@@ -95,7 +95,7 @@
                     </div>
                     <!-- /data contact -->
                     <!-- chat window -->
-                    <div id="section_chat">
+                    <div id="section_chat" class="overflow-scroll">
                         <ul class="flex-column d-flex list-unstyled">
                             <li id="boxMessage" class="d-flex flex-column justify-content-between" :class="(message.status == 'sent') ? 'messageSent ' : 'messageReceived '" v-for='message in contacts[currentContact].messages '>
                                 <div id="contentMessage" class="d-flex justify-content-between">
