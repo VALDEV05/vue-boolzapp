@@ -32,7 +32,7 @@
     width: 100vw;
     height: 100vh;
     background-color: var(--background-color-page);
-    background: linear-gradient(to bottom, #009688 0px, #009688 15vh, #D9DBD5 15vh, #D9DBD5 100%);
+    background: linear-gradient(to bottom, var(--background-color-top) 0px, var(--background-color-top) 15vh, var(--background-color-page) 15vh, var(--background-color-page) 100%);
 }
 
 #window_app {
