@@ -157,3 +157,17 @@
     background-color: #DCF8C6;
     border-radius: 15px 0 15px 15px;
 }
+
+.messageReceived #dateMessage {
+    font-size: 10px;
+    text-align: start;
+}
+
+.messageSent #dateMessage {
+    font-size: 10px;
+    text-align: end;
+}
+
+.active {
+    background-color: #EBEBEB;
+}

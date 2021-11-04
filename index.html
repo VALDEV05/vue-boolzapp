@@ -54,9 +54,9 @@
                     <!-- list contact -->
                     <div id="info_list_contacts">
                         <ul class="list-unstyled">
-                            <li class="contact d-flex justify-content-between" v-for='(contact, i) in contacts'>
+                            <li class="contact d-flex justify-content-between" :class="(i == currentContact) ? 'active' : null " v-for='(contact, i) in contacts' @click='selected(i)'>
                                 <div class="avatar_image d-flex  ms-2">
-                                    <img :src="' ./assets/img/avatarIMG/avatar' + contact.avatar + '.jpg '" class="image_user_avatar rounded-circle">
+                                    <img :src="' ./assets/img/avatarIMG/avatar ' + contact.avatar + '.jpg '" class="image_user_avatar rounded-circle">
                                     <div id="nameListContact" class="ms-3 fs-3">
                                         {{contact.name}}
                                     </div>
@@ -78,7 +78,7 @@
                     <div id="data_contact_chat" class="d-flex align-items-center justify-content-between">
                         <div id="contact_avatar" class="d-flex align-items-center justify-content-between">
                             <div id="profile_picture">
-                                <img :src="'./assets/img/avatarIMG/avatar' + contacts[currentContact].avatar + '.jpg '" class="image_user_avatar rounded-circle ms-3">
+                                <img :src="'./assets/img/avatarIMG/avatar ' + contacts[currentContact].avatar + '.jpg '" class="image_user_avatar rounded-circle ms-3">
                             </div>
                             <div class="user-name ms-4 fs-4">
                                 {{contacts[currentContact].name}}
@@ -97,7 +97,7 @@
                     <!-- chat window -->
                     <div id="section_chat">
                         <ul class="flex-column d-flex list-unstyled">
-                            <li id="boxMessage" class=" d-flex flex-column justify-content-between" :class="(message.status == 'sent') ? 'messageSent' : 'messageReceived'" v-for='message in contacts[currentContact].messages'>
+                            <li id="boxMessage" class=" d-flex flex-column justify-content-between" :class="(message.status == 'sent ') ? 'messageSent ' : 'messageReceived '" v-for='message in contacts[currentContact].messages '>
                                 <div id="contentMessage" class="d-flex justify-content-between">
                                     <div>
                                         {{message.text}}

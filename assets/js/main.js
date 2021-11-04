@@ -18,7 +18,8 @@ var app = new Vue({
         message_alert_2: 'Attiva notifiche desktop',
         placeholder_search_chat: 'Cerca o inizia una nuova chat',
         placeholder_input_message: 'Scrivi un messaggio',
-        currentContact: 1,
+        currentContact: 2,
+        lastDateContact: '',
         user: {
             name: 'Valerio',
             avatar: '_io'
@@ -118,6 +119,9 @@ var app = new Vue({
             else contactLastAccess = contactMessages[parseInt(contactMessages.length - 2)].date;
 
             return this.lastDateContact = contactLastAccess;
+        },
+        selected(i) {
+            return this.currentContact = i;
         },
     }
 })
