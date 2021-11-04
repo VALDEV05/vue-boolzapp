@@ -131,7 +131,6 @@ var app = new Vue({
         },
 
         messageInput() {
-
             if (this.newMessage != '') {
                 this.contacts[this.currentContact].messages.push({
                     date: '10/01/2020 15:50:00',
@@ -140,6 +139,15 @@ var app = new Vue({
                 })
                 this.newMessage = '';
             }
+            setTimeout(this.messageReceived, 1000)
+        },
+
+        messageReceived() {
+            this.contacts[this.currentContact].messages.push({
+                date: '10/01/2020 15:50:00',
+                text: 'ok',
+                status: 'received'
+            })
 
         },
     }

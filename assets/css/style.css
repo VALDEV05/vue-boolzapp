@@ -101,6 +101,7 @@
 }
 
 #section_chat {
+    overflow-y: scroll;
     height: calc(100% - 166px);
     width: 100%;
     background-image: url('/assets/img/backgroundIMG/background_chat.png');
