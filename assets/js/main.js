@@ -126,6 +126,7 @@ var app = new Vue({
 
             return this.lastDateContact = contactLastAccess;
         },
+
         selected(i) {
             return this.currentContact = i;
         },
@@ -133,13 +134,13 @@ var app = new Vue({
         messageInput() {
             if (this.newMessage != '') {
                 this.contacts[this.currentContact].messages.push({
-                    date: '10/01/2020 15:50:00',
+                    date: dayjs().format('DD/MM/YYYY hh:mm:ss'),
                     text: this.newMessage,
                     status: 'sent',
                 })
                 this.newMessage = '';
             }
-            setTimeout(this.messageReceived, 1000)
+            setTimeout(this.messageReceived, 2000)
             setInterval(() => {
                 let chat_page = document.getElementById("section_chat");
                 chat_page.scrollTop = chat_page.scrollHeight;
@@ -149,7 +150,7 @@ var app = new Vue({
 
         messageReceived() {
             this.contacts[this.currentContact].messages.push({
-                date: '10/01/2020 15:50:00',
+                date: dayjs().format('DD/MM/YYYY hh:mm:ss'),
                 text: 'ok',
                 status: 'received'
             })
@@ -160,5 +161,6 @@ var app = new Vue({
                 return !this.searchContact || contact.name.toLowerCase().indexOf(this.searchContact.toLowerCase()) > -1
             })
         },
+
     }
 })
