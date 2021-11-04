@@ -117,13 +117,15 @@
                             <i class="far fa-smile"></i>
                         </div>
                         <div id="input_message" class="d-flex align-items-center">
-                            <input type="text" class="form-control py-2 b-none" :placeholder="placeholder_input_message">
+                            <input type="text" class="form-control py-2 b-none" v-model="newMessage" :placeholder="placeholder_input_message" @keyup.enter='UserNewMessage'>
                         </div>
                         <div id="emoticon" class="d-flex align-items-center justify-content-center">
                             <i class="fas fa-microphone"></i>
                         </div>
                     </div>
+
                     <!-- /input chat -->
+
 
 
                 </div>
