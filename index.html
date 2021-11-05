@@ -42,7 +42,7 @@
                             <div id="back_alert_icon" class="p-3 "><i class="fas fa-bell-slash"></i></div>
                         </div>
                         <div id="alert_text" class="ms-2">
-                            <p class="fw-bold fs-5 mb-0">{{message_alert_1}}</p>
+                            <p class="cfs-5 mb-0">{{message_alert_1}}</p>
                             <p class="text-muted text-decoration-underline mb-0">{{message_alert_2}}</p>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="text_list_contact d-flex align-items-start">
                                     <div class="last_date fs-6 me-2 text-muted">
-                                        {{lastDateContactCurrent()}}
+                                        {{istantHour()}}
                                     </div>
 
                                 </div>
@@ -84,8 +84,8 @@
                             </div>
                             <div class="user-name ms-4 fs-4">
                                 {{contacts[currentContact].name}}
-                                <div class="last_date fs-6 text-muted">
-                                    Ultimo accesso: {{lastDateContactCurrent()}}
+                                <div id="login" class="last_date fs-6 text-muted">
+
                                 </div>
                             </div>
                         </div>

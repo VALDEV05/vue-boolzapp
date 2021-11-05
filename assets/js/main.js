@@ -128,8 +128,12 @@ var app = new Vue({
 
             return this.lastDateContact = contactLastAccess;
         },
+        istantHour() {
+            return dayjs().format('DD/MM/YYYY hh:mm:ss')
+        },
 
         selected(i) {
+            document.getElementById('login').innerHTML = 'Ultimo accesso: ' + this.istantHour()
             return this.currentContact = i;
         },
 
