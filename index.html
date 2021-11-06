@@ -73,7 +73,7 @@
                                 </div>
                                 <div id="last_login_wrapper" class="d-flex align-items-start text-nowrap">
                                     <div id="istantHour" class="last_date me-2 text-muted">
-                                        {{istantHour()}}
+                                        {{contact.messages[contact.messages.length - 1].date}}
                                     </div>
                                 </div>
 
@@ -93,7 +93,7 @@
                             <div class="user-name ms-4 fs-4">
                                 {{contacts[currentContact].name}}
                                 <div id="login" class="last_date fs-6 text-muted">
-
+                                    {{istantHour()}}
                                 </div>
                             </div>
                         </div>
