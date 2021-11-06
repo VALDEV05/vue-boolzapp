@@ -171,3 +171,7 @@
 .active {
     background-color: #EBEBEB;
 }
+
+#istantHour {
+    font-size: 15px;
+}

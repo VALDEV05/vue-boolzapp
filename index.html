@@ -57,18 +57,26 @@
                     <div id="info_list_contacts">
                         <ul class="list-unstyled">
                             <li class="contact d-flex justify-content-between" :class="(i == currentContact) ? 'active' : null " v-for='(contact, i) in filterSearch()' @click='selected(i)'>
-                                <div class="avatar_image d-flex  ms-2">
-                                    <img :src="' ./assets/img/avatarIMG/avatar' + contact.avatar + '.jpg '" class="image_user_avatar rounded-circle">
-                                    <div id="nameListContact" class="ms-3 fs-3">
-                                        {{contact.name}}
+
+                                <div id="data_contact_wrapper" class="d-flex">
+                                    <div class="avatar_image d-flex ms-2">
+                                        <img :src="' ./assets/img/avatarIMG/avatar' + contact.avatar + '.jpg '" class="image_user_avatar rounded-circle">
+                                    </div>
+                                    <div id="text_contact_wrapper">
+                                        <div id="nameListContact" class="ms-3 fs-3">
+                                            {{contact.name}}
+                                        </div>
+                                        <div id="last_message_contact" class="ms-3 text-muted">
+                                            {{contact.messages[contact.messages.length - 1].text}} ...
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="text_list_contact d-flex align-items-start">
-                                    <div class="last_date fs-6 me-2 text-muted">
+                                <div id="last_login_wrapper" class="d-flex align-items-start text-nowrap">
+                                    <div id="istantHour" class="last_date me-2 text-muted">
                                         {{istantHour()}}
                                     </div>
-
                                 </div>
+
                             </li>
                         </ul>
                     </div>
