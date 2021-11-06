@@ -108,14 +108,20 @@
                     <div id="section_chat" class="overflow-scroll">
                         <ul class="flex-column d-flex list-unstyled">
                             <li id="boxMessage" class="d-flex flex-column justify-content-between" :class="(message.status == 'sent') ? 'messageSent ' : 'messageReceived '" v-for='message in contacts[currentContact].messages '>
-                                <div id="contentMessage" class="d-flex justify-content-between">
-                                    <div>
+                                <div id="contentMessage" class="d-flex flex-column justify-content-between">
+                                    <div class="d-flex justify-content-between">
                                         {{message.text}}
-                                        <div id="dateMessage">
-                                            {{message.date}}
+                                        <div id="dropdown-wrapper" class="mx-2" @click="dropdown()">
+                                            <i class="fa fa-angle-down"></i>
+                                            <ul id="list-dropdown" class="list-unstyled d-none">
+                                                <li>Delete <i class="fa fa-trash"></i></li>
+                                            </ul>
                                         </div>
-                                    </div>
 
+                                    </div>
+                                    <div id="dateMessage">
+                                        {{message.date}}
+                                    </div>
                                 </div>
                             </li>
                         </ul>

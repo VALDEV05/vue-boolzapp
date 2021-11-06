@@ -167,6 +167,10 @@ var app = new Vue({
                 return !this.searchContact || contact.name.toLowerCase().indexOf(this.searchContact.toLowerCase()) > -1
             })
         },
+        dropdown() {
+            classList = document.getElementById('list-dropdown').classList
+            console.log(classList.remove('d-none'));
 
+        }
     }
 })
