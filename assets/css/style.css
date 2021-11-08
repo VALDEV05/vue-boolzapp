@@ -19,6 +19,7 @@
     --color-text-submain: #7F7376;
     --background-color-icon: #F2FBFF;
     --background-color-sidebar: #FFFFFF;
+    --background-color-header: #EAEAEA;
 }
 
 
@@ -86,6 +87,7 @@
 
 #info_user {
     border-right: 1px solid var(--color-icon-light);
+    background-color: var(--background-color-header);
 }
 
 
@@ -168,9 +170,9 @@
 }
 
 #data_contact_chat {
-    background-color: var(--background-color-sidebar);
     padding: 8px 0;
     height: 96px;
+    background-color: var(--background-color-header);
 }
 
 .messageReceived {
@@ -192,6 +194,11 @@
 .messageSent #dateMessage {
     font-size: 10px;
     text-align: end;
+}
+
+#last_message_contact {
+    font-size: 10px;
+    white-space: nowrap
 }
 
 
